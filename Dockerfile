@@ -1,15 +1,11 @@
-# Use Tomcat with Java 21
-FROM tomcat:10.1-jdk21-temurin-alpine
+# Use a base image with Java 21
+FROM eclipse-temurin:21-jre-alpine
 
-# Remove default Tomcat apps to keep it clean
-RUN rm -rf /usr/local/tomcat/webapps/*
+WORKDIR /app
 
-# Copy your built WAR file from the target folder
-# Naming it ROOT.war makes it available at the base URL (/)
-COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
+# Match the exact .war extension found in your target folder
+COPY target/*.war app.jar
 
-# Tomcat listens on 8080 by default
 EXPOSE 8080
 
-# No need for a java -jar ENTRYPOINT. Tomcat starts automatically.
-CMD ["catalina.sh", "run"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
