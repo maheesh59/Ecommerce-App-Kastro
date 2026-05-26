@@ -4,7 +4,7 @@
   <groupId>com</groupId>
   <artifactId>EcommerceApp</artifactId>
   <packaging>war</packaging>
-  <version>0.0.1</version>
+  <version>0.0.1-SNAPSHOT</version>
   <name>EcommerceApp Maven Webapp</name>
   <url>http://maven.apache.org</url>
 
@@ -64,11 +64,11 @@
   <distributionManagement>
     <repository>
       <id>maven-releases</id>
-      <url>http://13.233.107.166:8081/repository/maven-releases/</url>
+      <url>http://35.175.176.69:8081/repository/maven-releases/</url>
     </repository>
     <snapshotRepository>
       <id>maven-snapshots</id>
-      <url>http://13.233.107.166:8081/repository/maven-releases/</url>
+      <url>http://35.175.176.69:8081/repository/maven-snapshots/</url>
     </snapshotRepository>
   </distributionManagement>
 
